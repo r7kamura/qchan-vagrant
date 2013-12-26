@@ -24,6 +24,7 @@ Vagrant.configure("2") do |config|
         libxslt1-dev \
         libyaml-dev \
         lxc-docker \
+        redis-server \
         ruby-dev \
         sqlite3 \
         ssh \
