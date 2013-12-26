@@ -47,7 +47,7 @@ Vagrant.configure("2") do |config|
       # Install Ruby
       git clone git://github.com/sstephenson/rbenv.git .rbenv
       git clone https://github.com/sstephenson/ruby-build.git ~/.rbenv/plugins/ruby-build
-      echo 'export PATH="$HOME/.rbenv/bin:$PATH"' >> .bash_profile
+      which rbenv || echo 'export PATH="$HOME/.rbenv/bin:$PATH"' >> .bash_profile
       which rbenv || echo 'eval "$(rbenv init -)"' >> .bash_profile
       source .bash_profile
       rbenv install 2.1.0
@@ -58,17 +58,23 @@ Vagrant.configure("2") do |config|
 
       # Set up Qchan Worker
       git clone https://github.com/r7kamura/qchan-worker.git
-      cd qchan-worker && bundle install
+      cd qchan-worker
+      git pull
+      bundle install
       cd ..
 
       # Set up Qchan API
       git clone https://github.com/r7kamura/qchan-api.git
-      cd qchan-api && bundle install
+      cd qchan-api
+      git pull
+      bundle install
       cd ..
 
       # Set up Qchan Vagrant
       git clone https://github.com/r7kamura/qchan-vagrant.git
-      cd qchan-vagrant && bundle install
+      cd qchan-vagrant
+      git pull
+      bundle install
       cd ..
 
       # Done
