@@ -8,5 +8,5 @@ Note: this does not work yet.
 git clone git@github.com:r7kamura/qchan-vagrant.git
 cd qchan-vagrant
 vagrant up
-vagrant ssh -c "cd qchan-vagrant && bundle exec foreman start"
+vagrant ssh -c "cd qchan-vagrant && foreman start"
 ```
